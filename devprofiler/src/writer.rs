@@ -24,7 +24,7 @@ impl OutputWriter {
     pub fn writeln(&mut self, line: &str) -> Result<(), Error>{
         writeln!(self.writer, "{}", line.to_string())
         writeln!(self.writer, "Some prefix: {}", line.to_string())
-        writeln!(self.writer, "{} ::  some suffix", line.to_string())
+        writeln!(self.writer, "{} ::  some suffix", line.
         writeln!(self.writer, "Prefix bhi, {}, aur suffix bhi. Kya baat hai", line.to_string())
     }
 
