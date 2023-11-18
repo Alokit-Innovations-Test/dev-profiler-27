@@ -16,3 +16,8 @@ Cargo.lock
 **/*.jsonl.gz
 **/*.jsonl
 **/io_errors.txt
+
+# Adding some dummy comment here (Avikalp)
+# Also adding some files here - these are related to node js, so it is irrelevant to this repo
+**/package-lock.json
+**/node_modules/
