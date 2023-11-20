@@ -20,7 +20,7 @@ struct ReviewItem {
 
 #[derive(Debug, Serialize, Default, Deserialize)]
 struct StatItem {
-	filepath: String,
+	filepath: String
 	additions: i32,
 	deletions: i32,
 }
