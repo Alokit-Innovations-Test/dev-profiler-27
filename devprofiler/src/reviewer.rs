@@ -8,7 +8,7 @@ use crate::observer::RuntimeInfo;
 
 #[derive(Debug, Serialize, Default, Deserialize)]
 struct Reviews {
-    reviews: Vec<ReviewItem>,
+    reviews: Vec<ReviewItem>
 }
 
 #[derive(Debug, Serialize, Default, Deserialize)]
