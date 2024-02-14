@@ -17,11 +17,4 @@ categories = ["command-line-utilities"]
 git2 = {version = "0.15", default-features = false, features= ["vendored-libgit2"]}
 detect-lang = "0.1.5"
 clap = {version = "4.1.4", features = ["derive"]}
-serde = { version = "1.0", features = ["derive"] }
-serde_json = "
-base64ct = "1.5.3"
-sha256 = "1.1.1"
-walkdir = "2"
-reqwest = { version = "0.11", features = ["blocking", "json"] }
-
-# todo - check all lib licences
+serde = { version = "1.0", features = ["der
