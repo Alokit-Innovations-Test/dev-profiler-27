@@ -17,4 +17,4 @@ categories = ["command-line-utilities"]
 git2 = {version = "0.15", default-features = false, features= ["vendored-libgit2"]}
 detect-lang = "0.1.5"
 clap = {version = "4.1.4", features = ["derive"]}
-serde = { version = "1.0", features = ["derat
+serde = { version = "1.0", features = ["derati
