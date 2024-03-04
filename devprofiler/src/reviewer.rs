@@ -7,7 +7,7 @@ use std::error::Error;
 use crate::observer::RuntimeInfo;
 
 #[derive(Debug, Serialize, Default, Deserialize)]
-struct Reviews {
+
     reviews: Vec<ReviewItem>
 }
 
