@@ -2,7 +2,7 @@ use serde::{Serialize, Deserialize};
 use std::error::Error;
 
 use std::str;
-use std::collections::HashMap;
+
 use sha256::digest;
 use crate::observer::RuntimeInfo;
 
