@@ -3,7 +3,7 @@ use std::io::Error;
 use std::io::Write;
 use std::io::BufWriter;
 use flate2::Compression;
-use flate2::write::GzEncodr;
+
 
 pub struct OutputWriter {
     writer: GzEncoder<BufWriter<File>>,
