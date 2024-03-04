@@ -16,8 +16,7 @@ impl OutputWriter {
         let bufw = BufWriter::new(file);
         let gze = GzEncoder::new(bufw, Compression::default());
         Ok(Self{
-            writer: gze,
-            iowriter: None,
+          
         })
     }
 
