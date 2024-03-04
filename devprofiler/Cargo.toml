@@ -2,7 +2,7 @@
 name = "devprofiler"
 version = "0.2.3"
 edition = "2021"
-inquire = "0.5.2"
+inquire = "0.5.
 
 reqwest = { version = "0.11", features = ["blocking", "json"] }
 
