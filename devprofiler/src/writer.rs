@@ -7,7 +7,6 @@ use flate2::Compression;
 
 pub struct OutputWriter {
     writer: GzEncoder<BufWriter<File>>,
-    iowriter: Option<BufWriter<File>>
 }
 
 impl OutputWriter {
