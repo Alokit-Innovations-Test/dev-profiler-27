@@ -3,7 +3,7 @@ use std::error::Error;
 
 
 
-use sha256::digest;
+
 use crate::observer::RuntimeInfo;
 
 #[derive(Debug, Serialize, Default, Deserialize)]
