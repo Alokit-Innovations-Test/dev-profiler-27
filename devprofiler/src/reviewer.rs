@@ -1,8 +1,6 @@
 use serde::{Serialize, Deserialize};
 use std::error::Error;
 use std::process::Command;
-use std::str;
-use std::collections::HashMap;
 use sha256::digest;
 use crate::observer::RuntimeInfo;
 use regex::Regex;
@@ -13,8 +11,6 @@ struct Reviews {
 }
 
 #[derive(Debug, Serialize, Default, Deserialize)]
-struct ReviewItem {
-	base_head_commit: String,
 	pr_head_commit: String,
 	id: String,
 }
@@ -35,7 +31,6 @@ struct BlameItem {
 }
 
 #[derive(Debug, Serialize, Default, Deserialize)]
-struct LineItem {
 	author: String,
 	timestamp: String,
 }

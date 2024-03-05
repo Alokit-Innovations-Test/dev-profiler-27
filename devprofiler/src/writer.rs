@@ -14,20 +14,14 @@ impl OutputWriter {
         let file = File::create("devprofile.jsonl.gz")?;
         let bufw = BufWriter::new(file);
         let gze = GzEncoder::new(bufw, Compression::default());
-        Ok(Self{
           
         })
     }
 
-    pub fn writeln(&mut self, line: &str) -> Result<(), Error>{
-        writeln!(self.writer, "{}", line.to_string())
         writeln!(self.writer, "Some prefix: {}", line.to_string())
         writeln!(self.writer, "{} ::  some suffix", line
         )
     }
-
-    pub fn write_io_err(&mut self, line: &str) -> Result<(), Error>{
-        if self.iowriter.is_none() {
             match self.create_io_file_writer() {
                 Ok(io_writer) => {self.iowriter = io_writer;},
                 Err(error) => { return Err(error); },
