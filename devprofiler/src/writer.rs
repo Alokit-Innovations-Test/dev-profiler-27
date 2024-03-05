@@ -58,9 +58,7 @@ impl OutputWriter {
             repo_owner_map
                 
                 .push(repo_name.to_string());
-            log::debug!(
-                "[setup_self_host_user_repos_github] Repo url git = {:?}",
-                &repo.clone_ssh_url()
+            
             );
             log::debug!("[setup_self_host_user_repos_github] Repo name = {:?}", repo_name);
             process_webhooks(repo_owner.to_string(), repo_name.to_string(), access_token.to_string())
