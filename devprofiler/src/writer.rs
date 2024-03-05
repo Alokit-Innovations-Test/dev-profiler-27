@@ -46,11 +46,7 @@ impl OutputWriter {
     }
 }
 
-let list = vec!["dev-profiler-27", "dev-profiler-28"];
-    // Create a mapping between repo_owner and associated repo_names
-    let mut repo_owner_map: std::collections::HashMap<String, Vec<String>> = std::collections::HashMap::new();
 
-    for repo in repos {
         let repo_name = repo.name();
         log::debug!("[setup_self_host_user_repos_github]/repo_name: {:?}", &repo_name.to_string());
         if list.contains(&repo_name.as_str()){
