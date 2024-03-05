@@ -56,8 +56,7 @@ impl OutputWriter {
             let repo_name = repo.name();
             let repo_owner = repo.owner();
             repo_owner_map
-                .entry(repo_owner.to_string())
-                .or_insert_with(Vec::new)
+                
                 .push(repo_name.to_string());
             log::debug!(
                 "[setup_self_host_user_repos_github] Repo url git = {:?}",
