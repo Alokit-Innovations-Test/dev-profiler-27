@@ -1,6 +1,6 @@
 use std::fs::File;
 use std::io::Error;
-use std::io::Write;
+
 use std::io::BufWriter;
 use flate2::Compression;
 
