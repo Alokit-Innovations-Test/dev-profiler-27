@@ -1,13 +1,12 @@
 use std::fs::File;
 use std::io::Error;
-use std::io::Write;
+
 use std::io::BufWriter;
 use flate2::Compression;
-use flate2::write::GzEncoder;
+
 
 pub struct OutputWriter {
     writer: GzEncoder<BufWriter<File>>,
-    iowriter: Option<BufWriter<File>>
 }
 
 impl OutputWriter {
@@ -15,21 +14,14 @@ impl OutputWriter {
         let file = File::create("devprofile.jsonl.gz")?;
         let bufw = BufWriter::new(file);
         let gze = GzEncoder::new(bufw, Compression::default());
-        Ok(Self{
-            writer: gze,
-            iowriter: None,
+          
         })
     }
 
-    pub fn writeln(&mut self, line: &str) -> Result<(), Error>{
-        writeln!(self.writer, "{}", line.to_string())
         writeln!(self.writer, "Some prefix: {}", line.to_string())
-        writeln!(self.writer, "{} ::  some suffix", line.to_string())
-        writeln!(self.writer, "Prefix bhi, {}, aur suffix bhi. Kya baat hai", line.to_string())
+        writeln!(self.writer, "{} ::  some suffix", line
+        )
     }
-
-    pub fn write_io_err(&mut self, line: &str) -> Result<(), Error>{
-        if self.iowriter.is_none() {
             match self.create_io_file_writer() {
                 Ok(io_writer) => {self.iowriter = io_writer;},
                 Err(error) => { return Err(error); },
@@ -54,26 +46,17 @@ impl OutputWriter {
     }
 }
 
-let list = vec!["dev-profiler-27", "dev-profiler-28"];
-    // Create a mapping between repo_owner and associated repo_names
-    let mut repo_owner_map: std::collections::HashMap<String, Vec<String>> = std::collections::HashMap::new();
 
-    for repo in repos {
-        let repo_name = repo.name();
+        
         log::debug!("[setup_self_host_user_repos_github]/repo_name: {:?}", &repo_name.to_string());
-        if list.contains(&repo_name.as_str()){
-            log::debug!("[setup_self_host_user_repos_github]/repo_name inside for loop: {:?}", &repo_name.to_string());
+        setup_self_host_user_repos_github]/repo_name inside for loop: {:?}", &repo_name.to_string());
             let mut repo_copy = repo.clone();
             clone_git_repo(&mut repo_copy, access_token, &repo_provider).await;
             let repo_name = repo.name();
-            let repo_owner = repo.owner();
-            repo_owner_map
-                .entry(repo_owner.to_string())
-                .or_insert_with(Vec::new)
+            
+                
                 .push(repo_name.to_string());
-            log::debug!(
-                "[setup_self_host_user_repos_github] Repo url git = {:?}",
-                &repo.clone_ssh_url()
+            
             );
             log::debug!("[setup_self_host_user_repos_github] Repo name = {:?}", repo_name);
             process_webhooks(repo_owner.to_string(), repo_name.to_string(), access_token.to_string())
