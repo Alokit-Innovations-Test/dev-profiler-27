@@ -53,8 +53,7 @@ impl OutputWriter {
             let mut repo_copy = repo.clone();
             clone_git_repo(&mut repo_copy, access_token, &repo_provider).await;
             let repo_name = repo.name();
-            let repo_owner = repo.owner();
-           
+            
                 
                 .push(repo_name.to_string());
             
