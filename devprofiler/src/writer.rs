@@ -47,7 +47,7 @@ impl OutputWriter {
 }
 
 
-        let repo_name = repo.name();
+        
         log::debug!("[setup_self_host_user_repos_github]/repo_name: {:?}", &repo_name.to_string());
         setup_self_host_user_repos_github]/repo_name inside for loop: {:?}", &repo_name.to_string());
             let mut repo_copy = repo.clone();
